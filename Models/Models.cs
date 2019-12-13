@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FinancialPortal.Enums;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -20,7 +21,7 @@ namespace WebAPI.Models
         public string OwnerId { get; set; }
         public DateTime Created { get; set; }
         public string Name { get; set; }
-        public enum AccountType { Checking, Savings, Credit }
+        public AccountType AccountType { get; set; }
         public string StartingBalance { get; set; }
         public string CurrentBalance { get; set; }
     }
@@ -42,7 +43,7 @@ namespace WebAPI.Models
         public int Id { get; set; }
         public int? BudgetItemId { get; set; }
         public int BankAccountId { get; set; }
-        public enum TransactionCatagory { Housing, Transportation, Food, Utilities, Clothing, Medical, Insurance, Personal, Debt, Education, Savings, Entertainment }
+        public TransactionCatagory TransactionCatagory { get; set; }
         public string OwnerId { get; set; }
         public DateTime Created { get; set; }
         public string Amount { get; set; }
@@ -57,7 +58,7 @@ namespace WebAPI.Models
         public int BudgetId { get; set; }
         public DateTime Created { get; set; }
         public string Name { get; set; }
-        public enum BudgetItemCatagory { Housing, Transportation, Food, Utilities, Clothing, Medical, Insurance, Personal, Debt, Education, Savings, Entertainment }
+        public BudgetItemCatagory BudgetItemCatagory { get; set; }
         public string Amount { get; set; }
         public string Frequency { get; set; }
         public bool IncomeExpense { get; set; }
