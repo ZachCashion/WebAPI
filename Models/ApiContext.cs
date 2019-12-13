@@ -30,5 +30,20 @@ namespace WebAPI.Models
             return await Database.SqlQuery<Households>("GetHousehold @id",
                 new SqlParameter("id", id)).FirstOrDefaultAsync();
         }
+
+        public int AddHousehold(string name, string greeting)
+        {
+            return Database.ExecuteSqlCommand("AddHousehold @name, @greeting",
+                new SqlParameter("name", name),
+                new SqlParameter("greeting", greeting));
+        }
+
+        public int UpdateHousehold(int id, string name, string greeting)
+        {
+            return Database.ExecuteSqlCommand("UpdateHousehold @id, @name, @greeting",
+                new SqlParameter("id", id),
+                new SqlParameter("name", name),
+                new SqlParameter("greeting", greeting));
+        }
     }
 }

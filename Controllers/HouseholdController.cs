@@ -26,6 +26,8 @@ namespace WebAPI.Controllers
             return Json(data, new JsonSerializerSettings { Formatting = Formatting.Indented });
         }
 
+        //=======================================================================================
+
         [Route("GetHousehold")]
         public async Task<Households> GetHousehold(int id)
         {
@@ -37,6 +39,24 @@ namespace WebAPI.Controllers
         {
             var data = await db.GetHouseholds(id);
             return Json(data, new JsonSerializerSettings { Formatting = Formatting.Indented });
+        }
+
+        //=======================================================================================
+        // Add Household
+        [HttpPost]
+        [Route("AddHousehold")]
+        public IHttpActionResult AddHousehold (string name, string greeting)
+        {
+            return Ok(db.AddHousehold(name, greeting));
+        }
+
+        //=======================================================================================
+        // Update Household
+        [HttpPost]
+        [Route("UpdateHousehold")]
+        public IHttpActionResult UpdateHousehold (int id, string name, string greeting)
+        {
+            return Ok(db.UpdateHousehold(id, name, greeting));
         }
     }
 }
