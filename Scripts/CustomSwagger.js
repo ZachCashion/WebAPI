@@ -13,5 +13,5 @@
     $("title").text("WebAPI")
 
     //Custom Button Hide
-    $("#explore").text("display", "none")
+    $("#explore").css("display", "none")
 })

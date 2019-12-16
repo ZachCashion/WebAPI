@@ -15,7 +15,7 @@ namespace WebAPI.Controllers
             return await db.GetAllHouseholdData();
         }
 
-        [Route("GetAllHouseholdDataAsJson")]
+        [Route("GetAllHouseholdData/json")]
         public async Task<IHttpActionResult> GetAllHouseholdDataAsJson()
         {
             var data = await db.GetAllHouseholdData();
@@ -30,7 +30,7 @@ namespace WebAPI.Controllers
             return await db.GetHouseholds(id);
         }
 
-        [Route("GetHouseholdAsJson")]
+        [Route("GetHousehold/json")]
         public async Task<IHttpActionResult> GetHouseholdAsJson(int id)
         {
             var data = await db.GetHouseholds(id);

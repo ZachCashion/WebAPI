@@ -28,7 +28,7 @@ namespace WebAPI.Controllers
             return await db.GetTransactions(id);
         }
 
-        [Route("GetTransactionsJson")]
+        [Route("GetTransactions/json")]
         public async Task<IHttpActionResult> GetTransactionsJson(int id)
         {
             var data = await db.GetTransactions(id);
@@ -42,7 +42,7 @@ namespace WebAPI.Controllers
             return await db.GetTransactionDetail(id);
         }
 
-        [Route("GetTransactionDetailJson")]
+        [Route("GetTransactionDetail/json")]
         public async Task<IHttpActionResult> GetTransactionDetailJson(int id)
         {
             var data = await db.GetTransactionDetail(id);

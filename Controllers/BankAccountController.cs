@@ -28,7 +28,7 @@ namespace WebAPI.Controllers
             return await db.GetBankAccounts(id);
         }
 
-        [Route("GetBankAccountsJson")]
+        [Route("GetBankAccounts/json")]
         public async Task<IHttpActionResult> GetBankAccountsJson(int id)
         {
             var data = await db.GetBankAccounts(id);
@@ -42,7 +42,7 @@ namespace WebAPI.Controllers
             return await db.GetBankAccountDetail(id);
         }
 
-        [Route("GetBankAccountDetailJson")]
+        [Route("GetBankAccountDetail/json")]
         public async Task<IHttpActionResult> GetBankAccountDetailJson(int id)
         {
             var data = await db.GetBankAccountDetail(id);
