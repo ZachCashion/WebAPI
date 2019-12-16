@@ -17,7 +17,9 @@ namespace WebAPI.Controllers
 
         public ActionResult Swagger()
         {
-            return 
+            var link = "swagger/ui/index";
+
+            return Redirect(link);
         }
     }
 }
