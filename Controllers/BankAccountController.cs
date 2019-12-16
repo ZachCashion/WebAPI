@@ -36,7 +36,7 @@ namespace WebAPI.Controllers
         }
 
         //Get BankAccount Details ==========================================================================================================================
-        [Route("GetHousehold")]
+        [Route("GetBankAccountDetail")]
         public async Task<BankAccounts> GetBankAccountDetail(int id)
         {
             return await db.GetBankAccountDetail(id);

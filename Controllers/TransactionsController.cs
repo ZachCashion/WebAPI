@@ -1,9 +1,12 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
+using System.Threading.Tasks;
 using System.Web.Http;
+using WebAPI.Models;
 
 namespace WebAPI.Controllers
 {
@@ -19,9 +22,32 @@ namespace WebAPI.Controllers
         }
 
         //Get Transactions
+        [Route("GetTransactions")]
+        public async Task<List<Transactions>> GetTransactions(int id)
+        {
+            return await db.GetTransactions(id);
+        }
 
+        [Route("GetTransactionsJson")]
+        public async Task<IHttpActionResult> GetTransactionsJson(int id)
+        {
+            var data = await db.GetTransactions(id);
+            return Json(data, new JsonSerializerSettings { Formatting = Formatting.Indented });
+        }
 
         //Get Transaction Details
+        [Route("GetTransactionDetail")]
+        public async Task<Transactions> GetTransactionDetail(int id)
+        {
+            return await db.GetTransactionDetail(id);
+        }
+
+        [Route("GetTransactionDetailJson")]
+        public async Task<IHttpActionResult> GetTransactionDetailJson(int id)
+        {
+            var data = await db.GetTransactionDetail(id);
+            return Json(data, new JsonSerializerSettings { Formatting = Formatting.Indented });
+        }
 
     }
 }
