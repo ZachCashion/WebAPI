@@ -1,0 +1,8 @@
+﻿.swagger-section #header {
+    background-color: #E81B0C;
+}
+
+.swagger-section #header a#logo {
+    background: transparent url(/Images/FinancialPortal.png) no-repeat left center;
+    background-size: 30%;
+}
